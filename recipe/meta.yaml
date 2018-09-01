@@ -1,5 +1,4 @@
-{% set version = '3.1-131' %}
-
+{% set version = '3.1-137' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,46 +9,53 @@ package:
 source:
   fn: nlme_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/nlme_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/nlme/nlme_{{ version }}.tar.gz
-  sha256: 79daa167eb9bc7d8dba506da4b24b5250665b051d4e0a51dfccbb0087fdb564c
+    - {{ cran_mirror }}/src/contrib/nlme_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/nlme/nlme_{{ version }}.tar.gz
+  sha256: 01049bb9c53826ff4ec5ba7117d766b17a0108c85f80871a5adb0c0b58ef7e87
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('fortran') }}        # [unix]
-    - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('fortran') }}  # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-lattice
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-lattice
 
 test:
   commands:
-    - $R -e "library('nlme')"  # [not win]
+    - $R -e "library('nlme')"           # [not win]
     - "\"%R%\" -e \"library('nlme')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=nlme
-  license: GPL (>= 2) | file LICENCE
+  license: GPL (>= 2)
   summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
