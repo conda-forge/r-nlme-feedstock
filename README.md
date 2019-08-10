@@ -1,7 +1,7 @@
 About r-nlme
 ============
 
-Home: https://CRAN.R-project.org/package=nlme
+Home: https://svn.r-project.org/R-packages/trunk/nlme
 
 Package license: GPL (>= 2)
 
