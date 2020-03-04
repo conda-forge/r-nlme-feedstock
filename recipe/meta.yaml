@@ -1,4 +1,4 @@
-{% set version = "3.1-144" %}
+{% set version = "3.1-145" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nlme_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlme/nlme_{{ version }}.tar.gz
-  sha256: e91cd15dec019577e9b7b454f551d820165bc9dbc91237a2e643e0e646c11ebf
+  sha256: 30f3d8caa77b9ff46af2d56758d3fac026af1290e0d708f48c5fd8da9c1a2ac5
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -48,7 +48,7 @@ about:
   license: GPL (>= 2)
   summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
