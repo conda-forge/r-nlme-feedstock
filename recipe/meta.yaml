@@ -45,10 +45,11 @@ test:
 
 about:
   home: https://svn.r-project.org/R-packages/trunk/nlme
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
