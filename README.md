@@ -3,7 +3,7 @@ About r-nlme
 
 Home: https://svn.r-project.org/R-packages/trunk/nlme
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
