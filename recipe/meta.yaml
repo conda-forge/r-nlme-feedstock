@@ -1,4 +1,4 @@
-{% set version = "3.1-152" %}
+{% set version = "3.1-153" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nlme_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlme/nlme_{{ version }}.tar.gz
-  sha256: 5b65d1b1f121caf29e60341acf6d85e267fd94ed517748cf42d36359f74e515e
+  sha256: 3d27a98edf1b16ee868949e823ac0babbf10c937a7220d648b7ef9480cd680e3
 
 build:
   merge_build_host: true  # [win]
