@@ -3,6 +3,7 @@ About r-nlme-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-nlme-feedstock/blob/main/LICENSE.txt)
 
+
 About r-nlme
 ------------
 
@@ -11,6 +12,7 @@ Home: https://svn.r-project.org/R-packages/trunk/nlme
 Package license: GPL-2.0-or-later
 
 Summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
+
 About r-nlme
 ------------
 
