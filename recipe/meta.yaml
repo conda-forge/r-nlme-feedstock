@@ -1,6 +1,5 @@
 {% set version = "3.1-165" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-nlme
@@ -13,8 +12,7 @@ source:
   sha256: fc37bba493c2138be2f38fcfd2a67327d81ab91a37bad6f698226bb400ec9499
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,7 +37,6 @@ requirements:
     - r-lattice
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-lattice
 
 test:
