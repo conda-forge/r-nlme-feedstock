@@ -1,15 +1,15 @@
-{% set version = "3.1-169" %}
+{% set version = "3.1-170" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-nlme
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/nlme_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nlme/nlme_{{ version }}.tar.gz
-  sha256: 51b92f1b543d2eb5915478965dab05a9094e1675a160138d49963eb3a0e7fdb8
+  sha256: d8e1a92cc295b046c9fd12bc1b875fe7921cc1db58f4407f0b97d625e8197b44
 
 build:
   number: 0
