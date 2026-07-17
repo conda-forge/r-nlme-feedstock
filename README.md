@@ -13,6 +13,8 @@ Package license: GPL-2.0-or-later
 
 Summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
 
+Development: https://github.com/cran/nlme
+
 About r-nlme
 ------------
 
@@ -21,6 +23,8 @@ Home: https://svn.r-project.org/R-packages/trunk/nlme
 Package license: GPL-2.0-or-later
 
 Summary: Fit and compare Gaussian linear and nonlinear mixed-effects models.
+
+Development: https://github.com/cran/nlme
 
 Current build status
 ====================
